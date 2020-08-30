@@ -1,0 +1,91 @@
+// Global style
+
+// 页面居中
+.page-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 打开窗口动画
+@keyframes open {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.open-dialog {
+  animation: open 0.8s ease-in-out forwards;
+}
+
+// 关闭窗口动画
+@keyframes close {
+  from {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+.close-dialog {
+  animation: close 0.5s ease-in-out forwards;
+}
+
+// 变暗
+@keyframes beDark {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 1);
+  }
+}
+.bg-be-dark {
+  animation: beDark 1s linear forwards;
+}
+
+// 翻转
+@keyframes flip {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: scaleX(0.5) scaleY(2) perspective(120px) rotateX(-180.1deg)
+      rotateY(0deg);
+  }
+  50% {
+    transform: scaleX(2) scaleY(0.5) perspective(120px) rotateX(-180deg)
+      rotateY(-179.9deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+}
+.do-flip {
+  animation: flip 1.4s infinite ease-in-out;
+}
+
+// 翻转至平视
+@keyframes flipToEyeLevel {
+  from {
+    transform: translate(-50%, -50%) perspective(10px) rotateX(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) perspective(15px) rotateX(12deg);
+  }
+}
+.do-flip-to-eye-level {
+  animation: flipToEyeLevel 2s linear forwards;
+}
